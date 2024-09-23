@@ -5,8 +5,8 @@ function MyClockImage(){
 
  return (
 <div>
-{/* <CiClock1 className='text-9xl' /> */}
-{/* <img src='./src/clock.png' /> */}
+{<CiClock1 className='text-9xl' /> }
+{<img src='./src/clock.png' /> }
 </div>
 
  );

@@ -5,7 +5,8 @@ today = today.toLocaleString();
 let name = 'k-digital';
 
  return (//jsx문법, return 안에 태그는 하나만->div 태그로 묶어봄. (부모태그 하나만)-> <> 프래그먼트 태그(의미없이 묶기만 하는 태그)
-  <>
+  //프래그태그<></>:실제돔에 노드가 생기지 않음.
+  <> 
    <p className="p1">
     Hello React
    </p>
