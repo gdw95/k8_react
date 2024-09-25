@@ -1,10 +1,6 @@
 import { useState } from "react"
 export default function TailBall({ n }) {
 
-
-
-
-
 const ballColor = {
  'b0' : ' bg-lime-300',
  'b1' : ' bg-lime-400',
