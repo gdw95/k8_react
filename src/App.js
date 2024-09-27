@@ -1,12 +1,12 @@
 // import logo from './logo.svg';
 import './App.css';
-// import MyClock from './02/MyClock';
+import MyClock from './02/MyClock';
 // import Hello from './01/Hello';
 import { IoMdHome } from "react-icons/io";
 // import MyDiv1 from './03/MyDiv1';
 // import MyList from './04/MyList';
 // import Lotto from './05/Lotto';
-import FoodMain from './06/FoodMain';
+// import FoodMain from './06/FoodMain';
 
 
 function App() {
@@ -25,11 +25,11 @@ function App() {
                       flex flex-col -*items-center
                       overflow-y-auto'>
 
-
+        {<MyClock />}
         {/* <MyDiv1 /> */}
         {/* <MyList /> */}
         {/* <Lotto /> */}
-        {<FoodMain />}
+        {/* {<FoodMain />} */}
 
 
       </main>
