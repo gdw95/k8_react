@@ -1,42 +1,57 @@
 import bank from './img/bank.png';
 import busan from './img/busan.png';
 import market from './img/market.png';
+import { useState } from 'react';
 // import fooddata from './fooddata.json';
 
 
-export default function FoodCard() {
+export default function FoodCard({obj}) {
 
- const obj = {
+ const [isShow, setIsShow] = useState(false);
 
-  "구분": "광역지원센터",
-  "시군구": "부산시",
-  "사업장명": "부산광역푸드뱅크",
-  "신고기준": "당연",
-  "사업장 소재지": "부산광역시 동래구 낙민로 25, 부산사회복지종합센터 302호",
-  "연락처(대표번호)": "051-791-1377",
-  "팩스번호": "051-714-3096",
-  "운영주체 분류": "1. 사회복지법인",
-  "운영주체명": "부산광역시사회복지협의회"
+const objImg = {
+ "광역지원센터": busan,
+ "기초푸드뱅크": bank,
+ "기초푸드마켓": market
+}
 
- }
+const handleClick = () => {
+ setIsShow(!isShow);
+  }
+  return (
+  <div className='w-10/12 flex border border-slate-400 rounded-md p-5'>
 
- return (
-  <div>
-   card
-   <img src ={bank} alt='기초푸드뱅크' />
-   <img src ={busan} alt='광역지원센터' />
-   <img src ={market} alt='기초푸드마켓' />
-
-   {obj["구분"]}
-   {obj["시군구"]}
-   {obj["사업장명"]}
-   {obj["신고기준"]}
-   {obj["사업장 소재지"]}
-   {obj["연락처(대표번호)"]}
-   {obj["팩스번호"]}
-   {obj["운영주체 분류"]}
-   {obj["운영주체명"]}
-
+   <div className='w-1/5 mr-5'>
+   
+    <img src={objImg[obj["구분"]]}
+     alt={obj["구분"]} />
+   </div>
+   <div className='w-4/5 flex flex-col justify-between items-start'>
+    <div>
+     <div className='text-2xl text-slate-500 font-bold'>
+      {obj["사업장명"]}
+     </div>
+     <div className='text-1xl text-slate-400 font-bold'>
+      {obj["사업장 소재지"]}
+     </div>
+    </div>
+    <div className='w-full h-8 p-2 
+                    flex justify-end items-center bg-slate-600 text-white font-bold'
+        onClick={handleClick}>
+     {isShow && obj["연락처(대표번호)"]}
+    </div>
+   </div>
   </div>
  )
 }
+
+
+{/* <img src ={bank} alt='기초푸드뱅크' /> */}
+    {/* <img src ={market} alt='기초푸드마켓' /> */}
+
+    {/* <img src={obj.["구분"]==='광역지원센터' ? busan: 
+              obj.["구분"]==='기초푸드뱅크'? bank : marcket} alt={obj["구분"]} /> */}
+
+{/* {obj["팩스번호"]}
+   {obj["운영주체 분류"]}
+   {obj["운영주체명"]} */}

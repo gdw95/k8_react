@@ -22,7 +22,7 @@ function App() {
       </header>
 
       <main className='w-full grow
-                      flex flex-col justify-center items-center
+                      flex flex-col -*items-center
                       overflow-y-auto'>
 
 
@@ -42,6 +42,6 @@ function App() {
 
     </div>
   );
-}
+}  
 
 export default App;
