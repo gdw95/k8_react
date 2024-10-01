@@ -3,16 +3,6 @@ import { useEffect, useState } from "react"
 
 
 export default function BoxOfficeTr({handleClick, mv}) {//오브젝트로 받아야함
- 
- // console.log(BoxOfficeTr)
- // const trs = BoxOffice.map(mv => <BoxOffice 
- //  key = {mv.rank}
- //  movieNm ={mv.movieNm}
- //  openDt = {mv.openDt}
- //  showCnt = {mv.showCnt}
- //  audiCnt ={mv.audiCnt} />
- // );->내가한거임 무시하삼
- 
 
   return (
    <tr onClick={handleClick} className="bg-white border-b hover:bg-gray-50 cursor-pointer">
