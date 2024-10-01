@@ -39,7 +39,7 @@ export default function MyBox() {
                      p-5 m-5`}>
        <h1 className="flex justify-center items-center
                      text-3xl font-bold
-                     p-5 m-5 text-blue-700
+                     p-5 m-5 text-blue-700 bg-white
                      border border-slate-600 rounded-md
                      ">
          Blue
@@ -58,7 +58,7 @@ export default function MyBox() {
                      p-5 m-5`}>
        <h1 className="flex justify-center items-center
                      text-3xl font-bold
-                     p-5 m-5 text-orange-700
+                     p-5 m-5 text-orange-700 bg-white
                      border border-slate-600 rounded-md
                      ">
          orange
