@@ -49,6 +49,8 @@ export default function Traffic() {
   console.log('tm =', tm)
  }, [tdata]);
 
+
+ //props 중요//대분류와 중분류를 연결 짓는 개념 중요
  return (
   <div className="w-full">
    <TrafficNav />
