@@ -17,6 +17,7 @@ export default function BoxOffice() {
       const apiKey = process.env.REACT_APP_MV_KEY;
       const dt = '20240929';
 
+      //공백있으면 안됨, 백틱문자, $ & 표기 구별 잘
       let url = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?`;
       url = `${url}key=${apiKey}&targetDt=${dt}`;
 
