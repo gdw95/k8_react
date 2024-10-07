@@ -31,7 +31,21 @@ export default function MyRef() {
  }
 
  const handleAdd =() => {
+  if (x.current.value ==''){
+   alert('값을 입력하세요.')
+   x.current.focus();
+   return;
+  }
+  if(y.current.value ==''){
+   alert('값을 입력하세요.')
+   y.current.focus();
+   return;
+  }
   z.current.value = parseInt(x.current.value) + parseInt(y.current.value);
+ }
+
+ const handleFocus = () =>{
+
  }
 
  //맨처음 실행
@@ -72,13 +86,15 @@ export default function MyRef() {
     </div>
     <div className="w-3/5 grid grid-cols-5 gap-2 p-2 bg-slate-200">
       <div className="flex justify-center items-center text-center">
-        <input ref={x} type='number' id='txt1' name='txt1' className="h-10 w-24" />
+        <input ref={x} type='number' id='txt1' name='txt1' className="h-10 w-24"
+        onFocus={handleFocus} />
       </div>
       <div className="flex justify-center items-center text-2xl font-bold text-center">
         +
       </div>
       <div className="flex justify-center items-center text-center">
-        <input ref={y} type='number' id='txt2' name='txt2' className="h-10 w-24" />
+        <input ref={y} type='number' id='txt2' name='txt2' className="h-10 w-24"
+        onFocus={handleFocus} />
       </div>
       <div className="flex justify-center items-center text-center">
         <TailButton caption = '  =  '
