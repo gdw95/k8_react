@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import TailButton from "../UI/TailButton";
 
-export default function TrafficNav() {
+export default function TrafficNav({title, c, sel, setsel}) {
 
- const [sel, setSel] = useState();//버튼 클릭 시 색깔바꾸고 싶음
+//  const [sel, setSel] = useState();//버튼 클릭 시 색깔바꾸고 싶음
 
- const c = ['차대사람', '차대차', '차량단독', '철길건널목'];
+//  const c = ['차대사람', '차대차', '차량단독', '철길건널목'];
 
  const handleBtClick = (item) => {
-  setSel(item);
+  setsel(item);
  }
 
  //c의 개수만큼 버튼을 만들어야함//여러개의 태그일 경우 속성값 key도 줘야함 
@@ -21,9 +21,9 @@ export default function TrafficNav() {
 
  );
 
- useEffect(() => {
-  console.log(sel);
- }, [sel]);
+//  useEffect(() => {
+//   console.log(sel);
+//  }, [sel]);
 
  return (
   <div className="w-full p-2 m-2
