@@ -3,14 +3,14 @@ import './App.css';
 // import MyClock from './02/MyClock';
 // import Hello from './01/Hello';
 import { IoMdHome } from "react-icons/io";
-// import BoxOffice from './07/BoxOffice';
+ import BoxOffice from './07/BoxOffice';
 // import MyDiv1 from './03/MyDiv1';
 // import MyList from './04/MyList';
 // import Lotto from './05/Lotto';
 // import FoodMain from './06/FoodMain';
 // import MyBox from './08/MyBox';
 //import Traffic from './09/Traffic';
-import MyRef from './10/MyRef';
+// import MyRef from './10/MyRef';
 
 
 function App() {
@@ -34,10 +34,10 @@ function App() {
         {/* <MyList /> */}
         {/* <Lotto /> */}
         {/* {<FoodMain />} */}
-        {/* <BoxOffice /> */}
+        <BoxOffice />
         {/* <MyBox /> */}
         {/*<Traffic /> */}
-        <MyRef />
+        {/* <MyRef /> */}
 
       </main>
       <footer className='w-full h-20

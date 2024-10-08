@@ -1,10 +1,26 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import BoxOfficeTr from "./BoxOfficeTr";
 
 export default function BoxOffice() {
    const [tdata, setTdata] = useState();
    const [info, setInfo] = useState();
    const [trs, setTrs] = useState();
+
+   const dtRef = useRef();//인풋에 ref속성으로 넣어줘야함. ref정의는 따로해줘야함
+   //어제날짜 구하기 함수
+   const getYesterday = () => {
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+   
+      const year = yesterday.getFullYear();
+      let month = yesterday.getMonth() + 1;
+      let day = yesterday.getDate();
+   
+      //월 2자리
+      month = month < 10 ? '0' + month : month;
+      day = day < 10 ? '0' + day : day; 
+      return `${year}-${month}-${day}`;
+      }
 
    const handleTrClick = (item) => {//함수위치
       console.log(item);
@@ -13,9 +29,10 @@ export default function BoxOffice() {
       누적관객수 ${parseInt(item.audiCnt).toLocaleString()} 입니다.`;
       setInfo(tm);
    }
-   const getFetchData = () => {
+   const getFetchData = (dt) => {
       const apiKey = process.env.REACT_APP_MV_KEY;
-      const dt = '20240929';
+      // const dt = '20240929';//딱 특정한 날짜를 어제날짜로 되게끔 해야함
+      
 
       //공백있으면 안됨, 백틱문자, $ & 표기 구별 잘
       let url = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?`;
@@ -35,9 +52,18 @@ export default function BoxOffice() {
 
    }
 
+   const handleDt = () => {
+      const cdt = dtRef.current.value.replaceAll('-','');
+      getFetchData(cdt);
+   }
+
    //맨처음 한 번 실행
    useEffect(() => {
-      getFetchData();
+      const ydt = getYesterday();
+      console.log('yesterday =', ydt);
+      dtRef.current.value = ydt;
+      dtRef.current.max = ydt;//인풋에 맥스를 어제날짜로 주면 날짜선택 뒤에가 안되도록
+      getFetchData(ydt.replaceAll('-',''));//-값에 아무것도 안주니까 -가 사라지는 것
    }, []);
 
    //fetch하고 tdata에 넣은 데이터가 바뀔때마다 useEffect()가 실행됨
@@ -51,10 +77,21 @@ export default function BoxOffice() {
       setTrs(tm);
    }, [tdata])
 
-
+   //인풋이 바뀌는것 onChange 이벤트 처리//handleDt()는 인풋박스의 값이 변결될때 호출됨.
+   //useState 훅을 사용하여 inputValue 상태를 관리해야함. 초기값은 빈 문자열.
+   //event.target.value를 사용하여 현재 입력된 값을 가져오고, setInputValue로 상태업데이트-챗GPT
    //<tr></tr>은 한 줄
    return (
-      <div className='w-full h-screen flex justify-center items-center'>
+      <div className='w-full h-screen flex flex-col justify-center items-center'>
+         <div className="w-10/12 h-20 p-5 flex justify-between items-center">
+            <div className="font-bold p-2 text-2xl">
+               박스오피스
+            </div>
+            <div>
+               <input ref={dtRef} type='date' id='dt' name='dt'
+                     onChange={handleDt} />
+            </div>
+         </div>
          <table className="w-10/12 text-sm text-left rtl:text-right text-gray-500">
             <thead className="text-xmd font-bold text-gray-700 uppercase bg-gray-50 ">
                <tr>
