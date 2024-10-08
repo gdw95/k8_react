@@ -21,7 +21,7 @@ export default function BoxOfficeTr({handleClick, mv}) {//오브젝트로 받아
    <td className="px-6 py-2 text-center">
       { mv.rankInten > 0 ? <span className="text-red-600 pr-3">▲</span> : 
            mv.rankInten < 0 ? <span className="text-blue-600 pr-3">▼</span> : '-' }
-     { mv.rankInten != 0 && Math.abs(mv.rankInten)}
+     { mv.rankInten !== 0 && Math.abs(mv.rankInten)}
    </td>
  </tr>
       
