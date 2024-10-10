@@ -1,5 +1,5 @@
 
-//이 컴포넌트를 사용하기 위해서는 imgUrl, title, content 속성 3개가 필요
+//이 컴포넌트를 사용하기 위해서는 imgUrl, title, content, kw 속성 4개가 필요
 export default function TailCard({imgUrl, title, content, kw}) {
  
  // let kws = '';
@@ -24,7 +24,7 @@ export default function TailCard({imgUrl, title, content, kw}) {
   <div>
    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
 
-    <img className="rounded-t-lg"
+    <img className="rounded-t-lg h-60"
      // src="http://tong.visitkorea.or.kr/cms2/website/52/2586952.jpg" 
      src={imgUrl}
      alt="" />
