@@ -11,8 +11,8 @@ export default function Festival() {
  const [tdata, setTdata] = useState([]);
  //구정보
  const [gnum, setGnum] = useState([]);
- //선택된 구 정보
- const [selgu, setSelgu] = useState();
+ //선택된 축제
+ const [tags, setTags] = useState();
  //select box를 제어
  const gu = useRef();
 
@@ -33,7 +33,20 @@ export default function Festival() {
  //option이 선택이 되면
  const handleSelect =() =>{
   console.log(gu.current.value);
+  //해당하는 구의 축제 추출
+  const tm = tdata.filter(item => item.GUGUN_NM === gu.current.value)
+  .map(item => <TailCard 
+        key = {item.UC_SEQ}
+        imgUrl = {item.MAIN_IMG_THUMB}
+        title = {item.TITLE}
+        content = {item.TRFC_INFO} 
+        kw = {item.PLACE} />
+  );
+
+  setTags(tm);
+  console.log(tm);
  }
+
 
  useEffect(() => {
   getfetchData();
@@ -48,6 +61,7 @@ export default function Festival() {
   tm = [...new Set(tm)].sort();
   console.log('tm =', tm);
 
+  //13개의 구 정보를 생성
   tm = tm.map(item => <option key={item}
    value={item}>
    {item}
@@ -75,8 +89,8 @@ export default function Festival() {
 
    </div>
 
-   <div>
-    Festival
+   <div className="w-10/12 p-2 grid grid-cols-1 gap-2 lg:grid-cols-2 xl:grid-cols-3">
+    {tags}
    </div>
   </div>
  )
