@@ -12,7 +12,7 @@ export default function Gallery() {
 
  const handleCancel=()=> {//취소버튼 누르면 입력한 값이 사라지도록. 테일버튼_취소
   csRef.current.value ='';
-  csRef.current.focus();``
+  csRef.current.focus();
   setTags([]);
  }
 
