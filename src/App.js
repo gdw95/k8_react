@@ -37,7 +37,6 @@ function App() {
               <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/gallery'>관광</Link></li>
               <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/festival'>축제</Link></li>
               <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/fcst'>일기예보</Link></li>
-              <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/fcstlist'>일기예보리스트</Link></li>
         </ul>
         <p className='text-3xl font-bold p-5'><IoMdHome />
         </p>

@@ -8,14 +8,14 @@ export default function Fcst() {
  //console.log(getxy);
 
  //해당하는 1단계 정보 추출
- const sido = getxy.map(item => item["1단계"])
-                   .map(item => <option key={item["1단계"]} value={item["1단계"]}>
-                                 {item["1단계"]}
-                                </option>);
- console.log(sido);
 
+ 
+ const sido = getxy.map(item => <option key={item["1단계"]}
+                                          value={item["1단계"]}>
+                                          {item["1단계"]}
+                                   </option>);
  const navigate = useNavigate();
-
+console.log(sido);
  //날짜
  const txtDt = useRef();
  //지역
