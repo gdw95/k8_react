@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import TailButton from "../UI/TailButton"
-import { AtomN } from "./AtomN";
+import { AtomN, AtomN2 } from "./AtomN";
 import { useRecoilState } from "recoil";
 
 
