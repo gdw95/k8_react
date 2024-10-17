@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react"
 import TailButton from "../UI/TailButton"
+import { AtomN } from "./AtomN";
+import { useRecoilState } from "recoil";
+
 
 export default function Recoil3({x3, y3}) {
 
@@ -7,14 +10,16 @@ export default function Recoil3({x3, y3}) {
  const [y, setY] = useState(y3);
  const inRef = useRef();
 
-
+ const [n, setN] = useRecoilState(AtomN);
  const handleUp = () => {
   //x를 변경하려면 setX 로 변경
   setX(x + 1);
+  setN(n + 1);
  }
 
  const handleDown = () => {
   setX(x - 1);
+  setN(n - 1);
  }
 
 
