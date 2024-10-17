@@ -16,6 +16,8 @@ export default function FcstList() {
   //form 값을 참조하기 위한 ref변수
   const selRef = useRef() ;
   
+  //sky 항목
+  const sky = {'1': '맑음(🌞)', '3':'구름많음(⛅)', '4':'흐림(☁)'}
 
   const [sParams] = useSearchParams();
   const gubun = sParams.get('gubun');
@@ -40,7 +42,12 @@ export default function FcstList() {
                       <td>{item.fcstDate.slice(0,4)}.{item.fcstDate.slice(4,6)}.{item.fcstDate.slice(6,8)}</td>
                       {/* <td>{item.fcstDate}</td> */}
                       <td>{item.fcstTime.slice(0,2)}:{item.fcstTime.slice(2,4)}</td>
-                      <td>{item.fcstValue}{code.단위}</td>
+                      <td>
+                        {
+                          item.category === 'SKY' ? sky[item.fcstValue]
+                            : item.fcstValue + code.단위
+                        }
+                      </td> 
                     </tr>)
     setTrs(tm) ;
   }

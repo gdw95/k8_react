@@ -4,7 +4,7 @@ import './App.css';
 // import Hello from './01/Hello';
 import { IoMdHome } from "react-icons/io";
  import BoxOffice from './07/BoxOffice';
-// import MyDiv1 from './03/MyDiv1';
+ //import MyDiv1 from './03/MyDiv1';
 // import MyList from './04/MyList';
  import Lotto from './05/Lotto';
  import FoodMain from './06/FoodMain';
@@ -16,6 +16,7 @@ import { IoMdHome } from "react-icons/io";
 // import RouteMain from './13/RouteMain';
 import Fcst from './14/Fcst';
 import FcstList from './14/FcstList';
+import Recoil1 from './15/Recoil1';
 
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
@@ -37,6 +38,8 @@ function App() {
               <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/gallery'>관광</Link></li>
               <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/festival'>축제</Link></li>
               <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/fcst'>일기예보</Link></li>
+              <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/Recoil1'>Recoil1</Link></li>
+
         </ul>
         <p className='text-3xl font-bold p-5'><IoMdHome />
         </p>
@@ -55,6 +58,8 @@ function App() {
         <Route path = '/festival' element = {<Festival />} /> 
         <Route path = '/fcst' element = {<Fcst />} />
         <Route path = '/fcstlist' element = {<FcstList />} />
+        <Route path = '/Recoil1' element = {<Recoil1 />} />
+
         </Routes>
 
         {/* <MyDiv1 /> */}

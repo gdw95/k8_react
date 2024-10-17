@@ -62,11 +62,11 @@ console.log(sido);
     <TailButton caption='초단기예보'
                 color='lime'
                 handleClick={() => handleOk('초단기예보')}
-                size='w-1/2' />
+                size='w-full' />
     <TailButton caption='단기예보'
                 color='lime'
                 handleClick={() => handleOk('단기예보')}
-                size='w-1/2' />
+                size='w-full' />
    </div>
   </div>
  )

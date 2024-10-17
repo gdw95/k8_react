@@ -1,4 +1,4 @@
-import MyDiv2 from "./MyDiv2_1"
+import MyDiv2 from "./MyDiv2"
 
 // export default function MyDiv1() {
  export default function MyDiv1({}) {
@@ -13,9 +13,9 @@ import MyDiv2 from "./MyDiv2_1"
    bg-blue-800 text-white font-bold">
    <div className="w-full h-10 p-5 m-2
      flex justify-start items-center ">
-    {d1}
+    {/* {d1} */}
    </div>
-   <MyDiv2 dn1={d1} dn2={d2} dn3={d3} />
+   <MyDiv2 />
   </div>
  )
 }
