@@ -1,6 +1,14 @@
 import TailButton from "../UI/TailButton" ;
 import { useState, useEffect, useRef } from "react";
 
+//외부 폴더에 db.json파일 생성
+//npm install -g json-server
+//cd db 로 디렉토리변경
+//npx json-server --watch db.json  --port 3005 
+//띄어쓰기 유의
+
+
+
 
 export default function Rest() {
 
