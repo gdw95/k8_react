@@ -18,6 +18,7 @@ import Fcst from './14/Fcst';
 import FcstList from './14/FcstList';
 import RecoilMain from './15/RecoilMain';
 //import Recoil1 from './15/Recoil1';
+import Rest from './16/Rest';
 
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 
@@ -40,6 +41,8 @@ function App() {
               <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/festival'>축제</Link></li>
               <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/fcst'>일기예보</Link></li>
               <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/RecoilMain'>RecoilMain</Link></li>
+              <li className='mx-4 p-2 hoover: bg-slate-400 hoover:text-white rounded-md'><Link to='/Rest'>Rest</Link></li>
+
         </ul>
         <p className='text-3xl font-bold p-5'><IoMdHome />
         </p>
@@ -59,6 +62,8 @@ function App() {
         <Route path = '/fcst' element = {<Fcst />} />
         <Route path = '/fcstlist' element = {<FcstList />} />
         <Route path = '/RecoilMain' element = {<RecoilMain />} />
+        <Route path = '/Rest' element = {<Rest />} />
+
         </Routes>
 
         {/* <MyDiv1 /> */}

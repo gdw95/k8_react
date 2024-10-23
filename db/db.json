@@ -1,5 +1,16 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "id": "1",
+      "body": "This is a comment1.",
+      "postId": "조효원"
+    },
+    {
+      "id": "2",
+      "body": "This is a comment2.",
+      "postId": "조효원2"
+    }
+  ],
   "comments": [
     {
       "id": "1",
