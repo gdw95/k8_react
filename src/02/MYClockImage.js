@@ -5,7 +5,7 @@ function MyClockImage() {
 
  return (
   <div>
-   {<CiClock1 className='text-9xl w-full justify-center' />}
+   {<CiClock1 className='text-9xl w-full justify-center items-center' />}
    {/* {<img src='./src/clock.png' /> } */}
   </div>
 

@@ -9,10 +9,11 @@ import Recoil1 from "./Recoil1"
 
 export default function RecoilMain() {
  return (
-  <div>
-   <RecoilRoot>
+  <RecoilRoot>
+  <div className="w-full h-full flex flex-col justify-center items-center">
     <Recoil1 />
-   </RecoilRoot>
   </div>
+  </RecoilRoot>
+
  )
 }

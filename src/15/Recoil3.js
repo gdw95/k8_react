@@ -1,18 +1,17 @@
 import { useState, useEffect, useRef } from "react"
 import TailButton from "../UI/TailButton"
 import { AtomN, AtomN2 } from "./AtomN";
-import { useRecoilState } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 
 
 export default function Recoil3({x3, y3}) {
 
  const [x, setX] = useState(x3);
- const [y, setY] = useState(y3);
+ const y = useRecoilValue(AtomN2);
+ //const [y, setY] = useState(y3);
  const inRef = useRef();
 
  const [n, setN] = useRecoilState(AtomN);
- const [, setN2] = useRecoilState(AtomN2) ;
-
  const handleUp = () => {
   //x를 변경하려면 setX 로 변경
   setX(x + 1);
@@ -29,13 +28,13 @@ export default function Recoil3({x3, y3}) {
  //디펜던시 어레이[]에 따라 실행 시점 설정
  //(특정 state변수값이 바뀔때마다 -> x값이 바뀔 때), y값의 변경을 선언
  //디펜던시 어레이에 변수가 없을 경우 컴포넌트 처음 실행 될 때 맨 처음 한 번 실행.
- useEffect(() => {
-  setY(x * parseInt(inRef.current.value));
- }, [x]);
+//  useEffect(() => {
+//   setY(x * parseInt(inRef.current.value));
+//  }, [x]);
 
- useEffect(() =>{
-       setN2( n * parseInt(inRef.current.value)) ;
-     } , [n]);
+//  useEffect(() =>{
+//        setN2( n * parseInt(inRef.current.value)) ;
+//      } , [n]);
 
 
  return (
