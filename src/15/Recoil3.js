@@ -3,7 +3,6 @@ import TailButton from "../UI/TailButton"
 import { AtomN, AtomN2 } from "./AtomN";
 import { useRecoilValue, useRecoilState } from "recoil";
 
-
 export default function Recoil3({x3, y3}) {
 
  const [x, setX] = useState(x3);
@@ -23,6 +22,17 @@ export default function Recoil3({x3, y3}) {
   setN(n - 1);
  }
 
+ useEffect(() => {
+       if (!localStorage.getItem('x'))
+              setX(0);
+       else
+       setX(parseInt(localStorage.getItem('x')));
+}, []);
+
+
+ useEffect(() => {
+       localStorage.setItem('x', x);
+ }, [x]);
 
  //사이트이펙트 처리
  //디펜던시 어레이[]에 따라 실행 시점 설정

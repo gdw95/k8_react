@@ -1,0 +1,16 @@
+{
+  "posts": [],
+  "comments": [
+    {
+      "id": "1",
+      "body": "This is a comment1.",
+      "postId": 1
+    },
+    {
+      "id": "2",
+      "body": "This is a comment2.",
+      "postId": 1
+    }
+  ]
+}
+
