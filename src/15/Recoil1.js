@@ -1,6 +1,6 @@
 import Recoil2 from "./Recoil2"
 import Recoil3 from "./Recoil3"
-import { AtomN } from "./AtomN";
+import { AtomN, AtomN2 } from "./AtomN";
 import { useRecoilValue } from "recoil";
 
 
@@ -9,7 +9,8 @@ export default function Recoil1() {
   const x = 1;
   const y = 2;
 
-  const n = useRecoilValue(AtomN);
+  const n = useRecoilValue(AtomN) ;
+  const n2 = useRecoilValue(AtomN2) ;
 
   return (
     <div className="w-10/12 h-4/5 flex flex-col

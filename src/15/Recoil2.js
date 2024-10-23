@@ -1,7 +1,5 @@
-import Recoil3 from "./Recoil3";
 import { AtomN } from "./AtomN";
 import { useRecoilState } from "recoil";
-import { useRecoilValue } from "recoil";
 
 
 //export default function Recoil2(probs) { ->Recoil2 (probs.y2)
