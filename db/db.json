@@ -2,13 +2,18 @@
   "posts": [
     {
       "id": "1",
-      "body": "This is a comment1.",
-      "postId": "조효원"
+      "title": "This is a comment1.",
+      "author": "조효원"
     },
     {
       "id": "2",
-      "body": "This is a comment2.",
-      "postId": "조효원2"
+      "title": "This is a comment2.",
+      "author": "조효원2"
+    },
+    {
+      "id": "d6ef",
+      "title": "주석",
+      "author": "확인하기"
     }
   ],
   "comments": [
@@ -24,4 +29,3 @@
     }
   ]
 }
-
